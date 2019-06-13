@@ -8,6 +8,8 @@ events {
 http {
    access_log /dev/stdout;
 
+   client_max_body_size 64M;
+
    upstream target {
       server ${TARGET_ADDRESS};
    }
