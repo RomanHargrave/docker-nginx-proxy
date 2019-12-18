@@ -25,6 +25,7 @@ http {
          proxy_set_header X-Forwarded-For    $proxy_add_x_forwarded_for; # year there is an RFC standard header now, I know
          proxy_set_header X-Forwarded-Port   ${TARGET_X_FORWARDED_PORT};
          proxy_set_header X-Forwarded-Proto  ${TARGET_X_FORWARDED_PROTO};
+         proxy_read_timeout 60m;
          proxy_pass http://target;
       }
    }
